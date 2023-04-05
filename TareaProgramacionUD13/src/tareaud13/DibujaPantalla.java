@@ -12,7 +12,9 @@ public class DibujaPantalla {
 	// MAIN
 
 	public static void main(String[] args) {
+		
 		invocarSwitch();
+		
 	}
 	
 	// SWITCH OPCIONES
@@ -104,7 +106,7 @@ public class DibujaPantalla {
 		// CASO d: CALCULAR ÁREA TOTAL
 			
 		case "d":
-			p.areaPantalla();
+			System.out.println("El área total de todas las figuras es " + p.areaPantalla() + ".\n");
 			invocarSwitch();
 			break;
 
@@ -128,7 +130,7 @@ public class DibujaPantalla {
 		}
 	}
 
-	// FUNCIÓN QUE DEVUELVE UN CARACTER
+	// FUNCIÓN QUE DEVUELVE UN CARACTER (SI SE HA INTRODUCIDO CORRECTAMENTE)
 	
 	public static char cambiarCaracter() {		
 		System.out.println("Introduzca un caracter:");

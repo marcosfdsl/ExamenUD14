@@ -39,12 +39,12 @@ public class Pantalla {
 	
 	// MÉTODO QUE CALCULA EL ÁREA TOTAL DE TODAS LAS FIGURAS
 	
-	public void areaPantalla() {
+	public int areaPantalla() {
 		int areaTotal = 0;
 		for (int i=0; i<f.size(); i++) {
 			areaTotal+=f.get(i).area();
 		}
-		System.out.println("El área total de todas las figuras es " + areaTotal + ".\n");
+		return areaTotal;
 	}
 	
 	// MÉTODO QUE DIBUJA TODAS LAS FIGURAS
