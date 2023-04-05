@@ -64,7 +64,7 @@ public class Pantalla {
 		}
 	}
 	
-	// MÉTODOS PARA COMPROBAR SI EL ArrayList f ESTÁ VACÍO
+	// MÉTODO PROPIO PARA COMPROBAR SI EL ArrayList f ESTÁ VACÍO
 	
 	public boolean isEmpty() {
 		boolean empty = f.isEmpty();
