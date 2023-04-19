@@ -21,14 +21,21 @@ public class Habitat {
 		return listaAnimales;
 	}
 	
-	public void ordenarAnimales() {
-		TreeSet<Animal> animalesOrdenados = new TreeSet<Animal>();
-		// TERMINAR
+	public void eliminarAnimal(Animal animal) {
+		listaAnimales.remove(animal);
 	}
 
+	public String listaNombreAnimales() {
+		String lista = "";
+		for (int i=0; i<listaAnimales.size(); i++) {
+			lista+= listaAnimales.get(i).getNombre() + ", ";
+		}
+		return lista;
+	}
+	
 	@Override
 	public String toString() {
-		return "[nombre=" + nombre + "]";
+		return "[nombre=" + nombre + ", animales=(" + listaNombreAnimales() + ")]";
 	}
 
 }

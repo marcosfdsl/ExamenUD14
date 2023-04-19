@@ -30,6 +30,10 @@ public class Animal {
 		this.habitat = habitat;
 	}
 
+	public void setCuidador(EmpleadoZoo cuidador) {
+		this.cuidador = cuidador;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

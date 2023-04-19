@@ -101,7 +101,7 @@ public class ZooMain {
 		case 4:
 			
 			if (zoo.getListaHabitats().isEmpty()) {
-				System.out.println("Aún no se ha creado ningún habitat.\n");
+				System.out.println("Aún no se ha creado ningún habitat, por lo que no existen animales.\n");
 			}
 			else {
 				System.out.println("¿Qué animal deseas asignar a un nuevo habitat?");
@@ -112,7 +112,21 @@ public class ZooMain {
 				for (int i=0; i<zoo.getListaTotalAnimales().size(); i++) {
 					if (animal.equalsIgnoreCase(zoo.getListaTotalAnimales().get(i).getNombre())) {
 						contador++;
-						System.out.println("bien");
+						// A QUE HABITAT?
+						
+						System.out.println("Introduce el nombre del nuevo hábitat:");
+						String nombreHabitat = sc.nextLine();
+						
+						for (int j = 0; j < zoo.getListaHabitats().size(); j++) {
+							while (!zoo.getListaHabitats().get(j).getNombre().equalsIgnoreCase(nombreHabitat)) {
+								System.out.println("No existe el habitat " + nombreHabitat + ", introduce otro:");
+								nombreHabitat = sc.nextLine();
+							}
+							zoo.agregarAnimalesEnHabitatExistente(zoo.getListaHabitats().get(j), zoo.getListaTotalAnimales().get(i));
+							
+							zoo.getListaTotalAnimales().get(i).setHabitat(zoo.getListaHabitats().get(j));
+							System.out.println("El animal " + animal + " se ha añadido correctamente al habitat " + nombreHabitat + " y se ha eliminado del anterior.\n");
+						}
 					}
 				}
 				
@@ -124,10 +138,41 @@ public class ZooMain {
 			break;
 			
 		case 5:
+			if (zoo.getListaCuidadores().isEmpty()) {
+				System.out.println("Aún no se ha creado ningún cuidador.\n");
+			}
+			else {
+				System.out.println("¿Qué animal deseas asignar a un nuevo cuidador?");
+				String animal = sc.nextLine();
+				
+				int contador = 0;
+				
+				for (int i=0; i<zoo.getListaTotalAnimales().size(); i++) {
+					if (animal.equalsIgnoreCase(zoo.getListaTotalAnimales().get(i).getNombre())) {
+						contador++;						
+						System.out.println("Introduce el número de empleado del cuidador:");
+						String numeroCuidador = sc.nextLine();
+						
+						for (int j = 0; j < zoo.getListaCuidadores().size(); j++) {
+							while (!Integer.toString(zoo.getListaCuidadores().get(j).getNumEmpleado()).equalsIgnoreCase(numeroCuidador)) {
+								System.out.println("No existe el cuidador con número de empleado " + numeroCuidador + ", introduce otro:");
+								numeroCuidador = sc.nextLine();
+							}
+							zoo.getListaTotalAnimales().get(i).setCuidador(zoo.getListaCuidadores().get(j));
+						}
+					}
+				}
+				
+				if (contador==0) {
+					System.err.println("No existe el cuidador introducido.\n");
+				}
+			}
 			main(null);
 			break;
 			
 		case 6:
+			zoo.imprimirTodo();
+			System.out.println();
 			main(null);
 			break;
 			

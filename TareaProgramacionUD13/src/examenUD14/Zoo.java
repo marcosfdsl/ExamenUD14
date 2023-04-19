@@ -40,11 +40,11 @@ public class Zoo {
 		for (int i=0; i<listaTotalAnimales.size(); i++) {
 			System.out.println(listaTotalAnimales.get(i).toString());
 		}
-		System.out.println("Habitats:");
+		System.out.println("\nHabitats:");
 		for (int i=0; i<listaHabitats.size(); i++) {
 			System.out.println(listaHabitats.get(i).toString());
 		}
-		System.out.println("Cuidadores:");
+		System.out.println("\nCuidadores:");
 		for (int i=0; i<listaCuidadores.size(); i++) {
 			System.out.println(listaCuidadores.get(i).toString());
 		}
@@ -109,6 +109,13 @@ public class Zoo {
 				System.out.println("No existe ningún habitat con ese nombre.\n");
 			}
 		}
+	}
+	
+	public void agregarAnimalesEnHabitatExistente(Habitat habitat, Animal animal) {
+		for (int i=0; i<listaHabitats.size(); i++) {
+			listaHabitats.get(i).eliminarAnimal(animal);
+		}
+		habitat.getListaAnimales().add(animal);
 	}
 
 	public void agregarAnimalesEnHabitat(Habitat habitat) {
