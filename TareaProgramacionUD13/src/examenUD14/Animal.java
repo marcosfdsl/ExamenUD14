@@ -1,14 +1,14 @@
 package examenUD14;
 
 public class Animal {
-	
+
 	private String nombre;
 	private String genero;
 	private String especie;
 	private int edad;
 	private Habitat habitat;
 	private EmpleadoZoo cuidador;
-	
+
 	public Animal(String nombre, String genero, String especie, int edad, EmpleadoZoo cuidador) {
 		this.nombre = nombre;
 		this.genero = genero;
@@ -16,7 +16,7 @@ public class Animal {
 		this.edad = edad;
 		this.cuidador = cuidador;
 	}
-	
+
 	public Animal(String nombre, String genero, String especie, int edad, Habitat habitat, EmpleadoZoo cuidador) {
 		this.nombre = nombre;
 		this.genero = genero;
@@ -40,8 +40,8 @@ public class Animal {
 
 	@Override
 	public String toString() {
-		return "[nombre=" + nombre + ", genero=" + genero + ", especie=" + especie + ", edad=" + edad
-				+ ", habitat=" + habitat.getNombre() + ", cuidador=" + cuidador.getNumEmpleado() + "]";
+		return "[nombre=" + nombre + ", genero=" + genero + ", especie=" + especie + ", edad=" + edad + ", habitat="
+				+ habitat.getNombre() + ", cuidador=" + cuidador.getNumEmpleado() + "]";
 	}
-	
+
 }

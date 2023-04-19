@@ -24,28 +24,28 @@ public class Zoo {
 	public ArrayList<EmpleadoZoo> getListaCuidadores() {
 		return listaCuidadores;
 	}
-	
+
 	public ArrayList<Animal> getListaTotalAnimales() {
 		return listaTotalAnimales;
 	}
-	
+
 	public void imprimirAnimales() {
-		for (int i=0; i<listaTotalAnimales.size(); i++) {
+		for (int i = 0; i < listaTotalAnimales.size(); i++) {
 			System.out.println(listaTotalAnimales.get(i).toString());
 		}
 	}
-	
+
 	public void imprimirTodo() {
 		System.out.println("Animales:");
-		for (int i=0; i<listaTotalAnimales.size(); i++) {
+		for (int i = 0; i < listaTotalAnimales.size(); i++) {
 			System.out.println(listaTotalAnimales.get(i).toString());
 		}
 		System.out.println("\nHabitats:");
-		for (int i=0; i<listaHabitats.size(); i++) {
+		for (int i = 0; i < listaHabitats.size(); i++) {
 			System.out.println(listaHabitats.get(i).toString());
 		}
 		System.out.println("\nCuidadores:");
-		for (int i=0; i<listaCuidadores.size(); i++) {
+		for (int i = 0; i < listaCuidadores.size(); i++) {
 			System.out.println(listaCuidadores.get(i).toString());
 		}
 	}
@@ -68,7 +68,7 @@ public class Zoo {
 		Habitat nuevoHabitat = new Habitat(nombreNuevoHabitat, listaAnimalesNuevoHabitat);
 		listaHabitats.add(nuevoHabitat);
 		System.out.println("El habitat " + nombreNuevoHabitat + " ha sido creado.\n");
-				
+
 		System.out.println("¿Deseas añadir animales? (SI/NO)");
 		String respuesta = sc.nextLine();
 
@@ -110,9 +110,9 @@ public class Zoo {
 			}
 		}
 	}
-	
+
 	public void agregarAnimalesEnHabitatExistente(Habitat habitat, Animal animal) {
-		for (int i=0; i<listaHabitats.size(); i++) {
+		for (int i = 0; i < listaHabitats.size(); i++) {
 			listaHabitats.get(i).eliminarAnimal(animal);
 		}
 		habitat.getListaAnimales().add(animal);
@@ -173,7 +173,7 @@ public class Zoo {
 
 					System.out.println("El animal " + nombreAnimal + " ha sido creado y añadido al habitat "
 							+ habitat.getNombre() + ".\n");
-				
+
 				}
 			}
 			if (contadorCuidadores == 0) {
@@ -345,7 +345,7 @@ public class Zoo {
 				listaCuidadores.add(nuevoCuidador);
 
 				System.out.println("Se ha creado el cuidador " + nombreCuidador + apellidoCuidador
-						+ " con número de empleado " + numeroCuidador + ".");
+						+ " con número de empleado " + numeroCuidador + ".\n");
 			}
 		}
 	}
